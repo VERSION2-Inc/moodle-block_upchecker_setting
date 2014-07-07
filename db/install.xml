@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<XMLDB PATH="blocks/upchecker_setting/db" VERSION="20130115" COMMENT="XMLDB file for Moodle blocks/upchecker_setting"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="../../../lib/xmldb/xmldb.xsd"
+>
+  <TABLES>
+    <TABLE NAME="block_upchecker_setting_crs" COMMENT="ランダム問題コース設定">
+      <FIELDS>
+        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true" NEXT="course"/>
+        <FIELD NAME="course" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" PREVIOUS="id" NEXT="requesttoken"/>
+        <FIELD NAME="requesttoken" TYPE="char" LENGTH="20" NOTNULL="true" SEQUENCE="false" PREVIOUS="course" NEXT="requestsecret"/>
+        <FIELD NAME="requestsecret" TYPE="char" LENGTH="20" NOTNULL="true" SEQUENCE="false" PREVIOUS="requesttoken" NEXT="accesstoken"/>
+        <FIELD NAME="accesstoken" TYPE="char" LENGTH="20" NOTNULL="true" SEQUENCE="false" PREVIOUS="requestsecret" NEXT="accesssecret"/>
+        <FIELD NAME="accesssecret" TYPE="char" LENGTH="20" NOTNULL="true" SEQUENCE="false" PREVIOUS="accesstoken" NEXT="timemodified"/>
+        <FIELD NAME="timemodified" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" PREVIOUS="accesssecret"/>
+      </FIELDS>
+      <KEYS>
+        <KEY NAME="primary" TYPE="primary" FIELDS="id"/>
+      </KEYS>
+      <INDEXES>
+        <INDEX NAME="course" UNIQUE="true" FIELDS="course"/>
+      </INDEXES>
+    </TABLE>
+  </TABLES>
+</XMLDB>
