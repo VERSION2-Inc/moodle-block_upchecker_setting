@@ -1,4 +1,13 @@
 <?php
+/**
+ * Settings block of programming question type for Moodle
+ *
+ * @package    block_upchecker_setting
+ * @subpackage upchecker
+ * @copyright  VERSION2, Inc.
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
+
 namespace upchecker;
 
 require_once '../../config.php';
